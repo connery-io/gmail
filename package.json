@@ -1,0 +1,19 @@
+{
+  "name": "gmail",
+  "description": "Gmail connector for Connery",
+  "license": "MIT",
+  "author": {
+    "name": "Connery",
+    "email": "contact@connery.io"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.4"
+  },
+  "devDependencies": {
+    "connery": "*",
+    "jest": "^29.6.1"
+  },
+  "scripts": {
+    "build": "jest --passWithNoTests && connery validate && connery build"
+  }
+}
