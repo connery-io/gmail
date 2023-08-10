@@ -38,7 +38,16 @@ module.exports = {
     type: "js",
     handler,
   },
-  outputParameters: [],
+  outputParameters: [
+    {
+      key: "MessageId",
+      title: "Message ID",
+      type: "string",
+      validation: {
+        required: true,
+      },
+    },
+  ],
 };
 
 async function handler({ inputParameters, configurationParameters }) {
@@ -60,7 +69,9 @@ async function handler({ inputParameters, configurationParameters }) {
   };
 
   // Send the email
-  await transporter.sendMail(mailOptions);
+  const result = await transporter.sendMail(mailOptions);
 
-  return {};
+  return {
+    MessageId: result.messageId,
+  };
 }
