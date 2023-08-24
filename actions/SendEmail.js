@@ -8,7 +8,7 @@ module.exports = {
   inputParameters: [
     {
       key: "Recipient",
-      title: "Recipient",
+      title: "Email Recipient",
       description: "Email address of the email recipient",
       type: "string",
       validation: {
@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       key: "Subject",
-      title: "Subject",
+      title: "Email Subject",
       description: "Subject of the email",
       type: "string",
       validation: {
@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       key: "Body",
-      title: "Body",
+      title: "Email Body",
       description: "Body of the email",
       type: "string",
       validation: {
