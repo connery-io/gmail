@@ -79,6 +79,7 @@ async function handler({ inputParameters, configurationParameters }) {
 
   return {
     MessageId: result.messageId,
+    ExtraParameter: "123"
   };
 }
 
