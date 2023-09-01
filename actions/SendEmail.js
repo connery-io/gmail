@@ -72,6 +72,6 @@ async function handler({ inputParameters, configurationParameters }) {
   const result = await transporter.sendMail(mailOptions);
 
   return {
-    MessageId: 123 //result.messageId,
+    MessageId: result.messageId,
   };
 }
