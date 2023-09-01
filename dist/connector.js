@@ -78,8 +78,6 @@ async function handler({ inputParameters, configurationParameters }) {
   const result = await transporter.sendMail(mailOptions);
 
   return {
-    MessageId: result.messageId,
-    ExtraParameter: "123"
   };
 }
 
