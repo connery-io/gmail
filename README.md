@@ -2,6 +2,12 @@
 
 Gmail connector for Connery.
 
+## Available actions
+
+| Action                                           | Description |
+| ------------------------------------------------ | ----------- |
+| [Send email](/actions/RefreshConnectorsCache.js) |             |
+
 ## Repository structure
 
 The entry point for this connector is the `./index.js` file.
