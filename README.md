@@ -10,6 +10,9 @@ It contains the connector definition and references to all the actions.
 The `./actions/` folder contains all the actions this connector defines.
 Every action is represented by a separate file with the action definition and implementation.
 
+The `./dist/connector.js` file is the compiled version of the connector with all the dependencies.
+Connery runner uses this file to run the connector.
+
 ## Connery
 
 This repository is a [Connery](https://connery.io) connector.
