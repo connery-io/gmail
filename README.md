@@ -4,9 +4,9 @@ Gmail connector for Connery.
 
 ## Available actions
 
-| Action                              | Description |
-| ----------------------------------- | ----------- |
-| [Send email](/actions/SendEmail.js) |             |
+| Action                              | Description                                                         |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| [Send email](/actions/SendEmail.js) | Send an email to the recipient with the specified subject and body. |
 
 ## Repository structure
 
@@ -17,7 +17,7 @@ The `./actions/` folder contains all the actions this connector defines.
 Every action is represented by a separate file with the action definition and implementation.
 
 The `./dist/connector.js` file is the compiled version of the connector with all the dependencies.
-Connery runner uses this file to run the connector.
+Connery Runner uses this file to run the connector.
 
 ## Connery
 
