@@ -4,9 +4,9 @@ Gmail connector for Connery.
 
 ## Available actions
 
-| Action                                           | Description |
-| ------------------------------------------------ | ----------- |
-| [Send email](/actions/RefreshConnectorsCache.js) |             |
+| Action                              | Description |
+| ----------------------------------- | ----------- |
+| [Send email](/actions/SendEmail.js) |             |
 
 ## Repository structure
 
