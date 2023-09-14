@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 module.exports = {
   key: "SendEmail",
   title: "Send email",
-  description: "",
+  description: "Send an email to the recipient with the specified subject and body.",
   type: "create",
   inputParameters: [
     {
