@@ -1,20 +1,25 @@
 {
   "name": "gmail",
-  "description": "Gmail connector for Connery",
+  "description": "Gmail plugin for Connery",
   "license": "MIT",
   "author": {
     "name": "Connery",
     "email": "support@connery.io"
   },
   "dependencies": {
+    "@connery-io/sdk": "^0.0.8",
     "nodemailer": "^6.9.4"
   },
   "devDependencies": {
     "connery": "*",
-    "jest": "^29.6.1"
+    "jest": "^29.6.1",
+    "ts-loader": "^9.5.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "test": "jest --passWithNoTests",
-    "build": "jest --passWithNoTests && connery validate && connery build"
+    "build": "webpack",
+    "build-draft": "npm run test && tsc && connery validate"
   }
 }

@@ -1,6 +1,6 @@
 # Gmail
 
-Gmail connector for Connery.
+Gmail plugin for Connery.
 
 ## Available actions
 
@@ -10,27 +10,27 @@ Gmail connector for Connery.
 
 ## Repository structure
 
-The entry point for this connector is the `./index.js` file.
-It contains the connector definition and references to all the actions.
+The entry point for this plugin is the `./index.js` file.
+It contains the plugin definition and references to all the actions.
 
-The `./actions/` folder contains all the actions this connector defines.
+The `./actions/` folder contains all the actions this plugin defines.
 Every action is represented by a separate file with the action definition and implementation.
 
-The `./dist/connector.js` file is the compiled version of the connector with all the dependencies.
-Connery Runner uses this file to run the connector.
+The `./dist/plugin.js` file is the compiled version of the plugin with all the dependencies.
+Connery Runner uses this file to run the plugin.
 
 ## Connery
 
-This repository is a [Connery](https://connery.io) connector.
+This repository is a [Connery](https://connery.io) plugin.
 
-Connery is an open-source connector ecosystem for AI and No-Code.
+Connery is an open-source plugin ecosystem for AI and No-Code.
 
 Learn more about Connery:
 
 - [Documentation](https://docs.connery.io)
 - [Source code](https://github.com/connery-io/connery)
-- [A quick guide on how to start using this connector with Connery](https://docs.connery.io/docs/quick-start)
+- [A quick guide on how to start using this plugin with Connery](https://docs.connery.io/docs/quick-start)
 
 ## Support
 
-If you have any questions or need help with this connector, please create an issue in this repository.
+If you have any questions or need help with this plugin, please create an issue in this repository.
