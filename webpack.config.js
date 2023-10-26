@@ -10,6 +10,7 @@ module.exports = {
     output: {
         filename: 'plugin.js',
         path: path.resolve(__dirname, 'dist'),
+        libraryTarget: 'commonjs2',
     },
     resolve: {
         extensions: ['.ts', '.js'],
@@ -22,7 +23,6 @@ module.exports = {
                     loader: 'ts-loader',
                     options: {
                         configFile: 'tsconfig.webpack.json',
-                        transpileOnly: true,
                     }
                 },
                 exclude: /node_modules/,
