@@ -7,7 +7,7 @@
     "email": "support@connery.io"
   },
   "dependencies": {
-    "@connery-io/sdk": "^0.0.8",
+    "@connery-io/sdk": "^0.0.9",
     "nodemailer": "^6.9.4"
   },
   "devDependencies": {
