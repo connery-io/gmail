@@ -1,7 +1,7 @@
-import { Action, ActionContext, OutputParametersObject } from '@connery-io/sdk';
+import { ActionDefinition, ActionContext, OutputParametersObject } from '@connery-io/sdk';
 import nodemailer from 'nodemailer';
 
-const action: Action = {
+const action: ActionDefinition = {
   Key: 'SendEmail',
   Title: 'Send email',
   Description: 'Send an email to the recipient with the specified subject and body.',

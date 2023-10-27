@@ -1,7 +1,7 @@
-import { Action, Context, Plugin } from '@connery-io/sdk';
+import { PluginDefinition, ActionDefinition, Context } from '@connery-io/sdk';
 import SendEmail from './actions/SendEmail';
 
-const plugin: Plugin = {
+const plugin: PluginDefinition = {
   Title: 'Gmail',
   Description: 'Gmail plugin for Connery',
   Actions: getActions,
@@ -48,7 +48,7 @@ const plugin: Plugin = {
 
 export default plugin;
 
-function getActions(context: Context): Promise<Action[]> {
+function getActions(context: Context): Promise<ActionDefinition[]> {
   return new Promise((resolve) => {
     resolve([SendEmail]);
   });
