@@ -3,5 +3,5 @@
     "target": "esnext",
     "module": "nodenext"
   },
-  "include": ["index.ts"]
+  "include": ["src/index.ts"]
 }
