@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "nodenext"
+    "module": "nodenext",
+    "esModuleInterop": true
   },
   "include": ["src/index.ts"]
 }
