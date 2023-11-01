@@ -49,8 +49,8 @@ const plugin: PluginDefinition = {
 export default plugin;
 
 async function getActions(context: Context): Promise<ActionDefinition[]> {
-  // wait 10 seconds for testing purposes
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  // wait 5 seconds for testing purposes
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 
   return [SendEmail];
 }

@@ -53,6 +53,9 @@ const action: ActionDefinition = {
 export default action;
 
 async function handler({ inputParameters, configurationParameters }: ActionContext): Promise<OutputParametersObject> {
+  // wait 3 seconds for testing purposes
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   // Create a reusable transporter object using the SMTP transport
   let transporter = nodemailer.createTransport({
     service: 'gmail',
