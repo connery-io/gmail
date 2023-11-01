@@ -1,11 +1,4 @@
 {
-  "name": "gmail",
-  "description": "Gmail plugin for Connery",
-  "license": "MIT",
-  "author": {
-    "name": "Connery",
-    "email": "support@connery.io"
-  },
   "dependencies": {
     "@connery-io/sdk": "^0.0.13",
     "nodemailer": "^6.9.4"
