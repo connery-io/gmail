@@ -2,49 +2,49 @@ import { ActionDefinition, ActionContext, OutputParametersObject } from '@conner
 import nodemailer from 'nodemailer';
 
 const action: ActionDefinition = {
-  Key: 'SendEmail',
-  Title: 'Send email',
-  Description: 'Send an email to the recipient with the specified subject and body.',
-  Type: 'create',
-  InputParameters: [
+  key: 'sendEmail',
+  title: 'Send email',
+  description: 'Send an email to the recipient with the specified subject and body.',
+  type: 'create',
+  inputParameters: [
     {
-      Key: 'Recipient',
-      Title: 'Email Recipient',
-      Description: 'Email address of the email recipient.',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      key: 'recipient',
+      title: 'Email Recipient',
+      description: 'Email address of the email recipient.',
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
     {
-      Key: 'Subject',
-      Title: 'Email Subject',
-      Description: 'Subject of the email.',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      key: 'subject',
+      title: 'Email Subject',
+      description: 'Subject of the email.',
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
     {
-      Key: 'Body',
-      Title: 'Email Body',
-      Description: 'Body of the email.',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      key: 'body',
+      title: 'Email Body',
+      description: 'Body of the email.',
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
   ],
-  Operation: {
-    Handler: handler,
+  operation: {
+    handler: handler,
   },
-  OutputParameters: [
+  outputParameters: [
     {
-      Key: 'MessageId',
-      Title: 'Message ID',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      key: 'messageId',
+      title: 'Message ID',
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
   ],
@@ -52,22 +52,22 @@ const action: ActionDefinition = {
 
 export default action;
 
-async function handler({ InputParameters, ConfigurationParameters }: ActionContext): Promise<OutputParametersObject> {
+async function handler({ inputParameters, configurationParameters }: ActionContext): Promise<OutputParametersObject> {
   // Create a reusable transporter object using the SMTP transport
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: ConfigurationParameters.GmailEmailAddress,
-      pass: ConfigurationParameters.GmailAppPassword,
+      user: configurationParameters.gmailEmailAddress,
+      pass: configurationParameters.gmailAppPassword,
     },
   });
 
   // Email content
   let mailOptions = {
-    from: `"${ConfigurationParameters.SenderName}" <${ConfigurationParameters.GmailEmailAddress}>`,
-    to: InputParameters.Recipient,
-    subject: InputParameters.Subject,
-    text: InputParameters.Body,
+    from: `"${configurationParameters.senderName}" <${configurationParameters.gmailEmailAddress}>`,
+    to: inputParameters.recipient,
+    subject: inputParameters.subject,
+    text: inputParameters.body,
   };
 
   // Send the email

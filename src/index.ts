@@ -2,54 +2,55 @@ import { PluginDefinition, ActionDefinition, Context } from '@connery-io/sdk';
 import SendEmail from './actions/SendEmail';
 
 const plugin: PluginDefinition = {
-  Title: 'Gmail',
-  Description: 'Gmail plugin for Connery',
-  Actions: getActions,
-  ConfigurationParameters: [
+  title: 'Gmail',
+  description: 'Gmail plugin for Connery',
+  actions: getActions, //[SendEmail], //getActions,
+  configurationParameters: [
     {
-      Key: 'GmailEmailAddress',
-      Title: 'Gmail email address',
-      Description: 'Gmail email address to login with and send emails from.',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      key: 'gmailEmailAddress',
+      title: 'Gmail email address',
+      description: 'Gmail email address to login with and send emails from.',
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
     {
-      Key: 'GmailAppPassword',
-      Title: 'Gmail app password',
-      Description:
+      key: 'gmailAppPassword',
+      title: 'Gmail app password',
+      description:
         'Since Gmail does not allow to login with a password, you need to create an app password for your Gmail account. See https://support.google.com/accounts/answer/185833?hl=en for more information.',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
     {
-      Key: 'SenderName',
-      Title: 'Sender name',
-      Description: 'The name of the sender that will appear in the email.',
-      Type: 'string',
-      Validation: {
-        Required: true,
+      key: 'senderName',
+      title: 'Sender name',
+      description: 'The name of the sender that will appear in the email.',
+      type: 'string',
+      validation: {
+        required: true,
       },
     },
   ],
-  Maintainers: [
+  maintainers: [
     {
-      Name: 'Connery',
-      Email: 'support@connery.io',
+      name: 'Connery',
+      email: 'support@connery.io',
     },
   ],
-  Connery: {
-    RunnerVersion: '0',
+  connery: {
+    runnerVersion: '0',
   },
 };
 
 export default plugin;
 
-function getActions(context: Context): Promise<ActionDefinition[]> {
-  return new Promise((resolve) => {
-    resolve([SendEmail]);
-  });
+async function getActions(context: Context): Promise<ActionDefinition[]> {
+  // wait 10 seconds for testing purposes
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+
+  return [SendEmail];
 }
