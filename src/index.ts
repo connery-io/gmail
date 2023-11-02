@@ -1,10 +1,10 @@
-import { PluginDefinition, ActionDefinition, Context } from '@connery-io/sdk';
-import SendEmail from './actions/SendEmail';
+import { PluginDefinition } from '@connery-io/sdk';
+import sendEmail from './actions/sendEmail';
 
 const plugin: PluginDefinition = {
   title: 'Gmail',
   description: 'Gmail plugin for Connery',
-  actions: getActions, //[SendEmail], //getActions,
+  actions: [sendEmail],
   configurationParameters: [
     {
       key: 'gmailEmailAddress',
@@ -48,9 +48,10 @@ const plugin: PluginDefinition = {
 
 export default plugin;
 
-async function getActions(context: Context): Promise<ActionDefinition[]> {
-  // wait 5 seconds for testing purposes
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-
-  return [SendEmail];
-}
+// Test function
+//async function getActions(context: Context): Promise<ActionDefinition[]> {
+//  // wait 5 seconds for testing purposes
+//  await new Promise((resolve) => setTimeout(resolve, 5000));
+//
+//  return [sendEmail];
+//}

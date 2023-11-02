@@ -49,7 +49,6 @@ const action: ActionDefinition = {
     },
   ],
 };
-
 export default action;
 
 export async function handler({

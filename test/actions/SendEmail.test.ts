@@ -1,8 +1,4 @@
-import { handler } from '../../src/actions/SendEmail';
-
-// NOTE: You don't need to test whether the input parameters are provided and valid.
-// Connery Runner will handle that based on your action definition.
-// So you only need to test the logic of your action.
+import { handler } from '../../src/actions/sendEmail';
 
 // TODO #1: Rename xit() to it() to enable the test.
 // TODO #2: Change the test name below to match your use case.
