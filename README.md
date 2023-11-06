@@ -4,9 +4,9 @@
 
 ## Available actions
 
-| Action                                   | Description                                                         |
-| ---------------------------------------- | ------------------------------------------------------------------- |
-| [[Send email](/src/actions/sendEmail.ts) | Send an email to the recipient with the specified subject and body. |
+| Action                                  | Description                                                         |
+| --------------------------------------- | ------------------------------------------------------------------- |
+| [Send email](/src/actions/sendEmail.ts) | Send an email to the recipient with the specified subject and body. |
 
 ## Repository structure
 
