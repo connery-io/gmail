@@ -10,14 +10,14 @@
 
 ## Repository structure
 
-The entry point for this plugin is the [./src/index.ts](/src/index.ts) file.
-It contains the plugin definition and references to all the actions.
+The entry point for this plugin is the [./src/index.ts](/src/index.ts) file. It contains the plugin
+definition and references to all the actions.
 
-The [./src/actions/](/src/actions/) folder contains all the actions this plugin defines.
-Every action is represented by a separate file with the action definition and implementation.
+The [./src/actions/](/src/actions/) folder contains all the actions this plugin defines. Every
+action is represented by a separate file with the action definition and implementation.
 
-The [./dist/plugin.js](/dist/plugin.js) file is the bundled version of the plugin with all the dependencies.
-Connery Platform uses this file to run the plugin.
+The [./dist/plugin.js](/dist/plugin.js) file is the bundled version of the plugin with all the
+dependencies. Connery Platform uses this file to run the plugin.
 
 ## Connery
 

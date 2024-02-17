@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "$deps": "./deps.ts",
+    "$devDeps": "./dev_deps.ts",
+    "$actions/": "./src/actions/"
+  },
+  "fmt": {
+    "lineWidth": 100
+  }
+}

@@ -1,8 +1,7 @@
-import { handler } from '../../src/actions/sendEmail';
+import { handler } from "$actions/sendEmail.ts";
+import { assertEquals } from "$devDeps";
 
-// TODO #1: Rename xit() to it() to enable the test.
-// TODO #2: Change the test name below to match your use case.
-xit('should verify if the SendEmail action works as expected', async () => {
+Deno.test("it should verify if the SendEmail action works as expected", async () => {
   const configurationParameters = {
     /* TODO #3: Specify configuration parameters for the plugin. */
   };
@@ -12,7 +11,5 @@ xit('should verify if the SendEmail action works as expected', async () => {
 
   const result = await handler({ inputParameters, configurationParameters });
 
-  expect(result).toEqual({
-    /* TODO #5: Specify the expected value of the result. */
-  });
+  assertEquals(result, {});
 });
