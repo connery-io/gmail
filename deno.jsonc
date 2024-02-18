@@ -4,6 +4,9 @@
     "$devDeps": "./dev_deps.ts",
     "$actions/": "./src/actions/"
   },
+  "tasks": {
+    "wasmbuild": "deno run -A https://deno.land/x/wasmbuild@0.8.5/main.ts"
+  },
   "fmt": {
     "lineWidth": 100
   }
