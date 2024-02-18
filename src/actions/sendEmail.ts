@@ -1,4 +1,4 @@
-import { ActionContext, ActionDefinition, nodemailer, OutputParametersObject } from "$deps";
+import { ActionContext, ActionDefinition, nodemailer, OutputParametersObject } from "../../deps.ts";
 
 const action: ActionDefinition = {
   key: "sendEmail",
