@@ -1,5 +1,5 @@
 import { handler } from "$actions/sendEmail.ts";
-import { assertEquals } from "$devDeps";
+import { assertEquals } from "$dev_deps";
 
 Deno.test("it should verify if the SendEmail action works as expected", async () => {
   const configurationParameters = {

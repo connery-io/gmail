@@ -1,7 +1,7 @@
 {
   "imports": {
     "$deps": "./deps.ts",
-    "$devDeps": "./dev_deps.ts",
+    "$dev_deps": "./dev_deps.ts",
     "$actions/": "./src/actions/"
   },
   "tasks": {
