@@ -1,5 +1,5 @@
-import { PluginDefinition } from "../deps.ts";
-import sendEmail from "./actions/sendEmail.ts";
+import { PluginDefinition } from "$deps";
+import sendEmail from "$actions/sendEmail.ts";
 
 const plugin: PluginDefinition = {
   title: "Gmail",
