@@ -1,5 +1,5 @@
-import { PluginDefinition } from '@connery-io/sdk';
-import sendEmail from './actions/sendEmail';
+import { PluginDefinition, serve } from '@connery-io/sdk';
+import sendEmail from './actions/sendEmail.js';
 
 const plugin: PluginDefinition = {
   title: 'Gmail',
@@ -41,17 +41,6 @@ const plugin: PluginDefinition = {
       email: 'support@connery.io',
     },
   ],
-  connery: {
-    runnerVersion: '0',
-  },
 };
 
-export default plugin;
-
-// Test function
-//async function getActions(context: Context): Promise<ActionDefinition[]> {
-//  // wait 5 seconds for testing purposes
-//  await new Promise((resolve) => setTimeout(resolve, 5000));
-//
-//  return [sendEmail];
-//}
+serve(plugin);
