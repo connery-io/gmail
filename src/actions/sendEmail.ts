@@ -1,35 +1,35 @@
-import { ActionDefinition, ActionContext, OutputParametersObject } from '@connery-io/sdk';
-import nodemailer from 'nodemailer';
+import { ActionDefinition, ActionContext, OutputParametersObject } from "@connery-io/sdk";
+import nodemailer from "nodemailer";
 
 const action: ActionDefinition = {
-  key: 'sendEmail',
-  title: 'Send email',
-  description: 'Send an email to the recipient with the specified subject and body.',
-  type: 'create',
+  key: "sendEmail",
+  title: "Send email",
+  description: "Send an email to the recipient with the specified subject and body.",
+  type: "create",
   inputParameters: [
     {
-      key: 'recipient',
-      title: 'Email Recipient',
-      description: 'Email address of the email recipient.',
-      type: 'string',
+      key: "recipient",
+      title: "Email Recipient",
+      description: "Email address of the email recipient.",
+      type: "string",
       validation: {
         required: true,
       },
     },
     {
-      key: 'subject',
-      title: 'Email Subject',
-      description: 'Subject of the email.',
-      type: 'string',
+      key: "subject",
+      title: "Email Subject",
+      description: "Subject of the email.",
+      type: "string",
       validation: {
         required: true,
       },
     },
     {
-      key: 'body',
-      title: 'Email Body',
-      description: 'Body of the email.',
-      type: 'string',
+      key: "body",
+      title: "Email Body",
+      description: "Body of the email.",
+      type: "string",
       validation: {
         required: true,
       },
@@ -40,9 +40,9 @@ const action: ActionDefinition = {
   },
   outputParameters: [
     {
-      key: 'messageId',
-      title: 'Message ID',
-      type: 'string',
+      key: "messageId",
+      title: "Message ID",
+      type: "string",
       validation: {
         required: true,
       },
@@ -57,7 +57,7 @@ export async function handler({
 }: ActionContext): Promise<OutputParametersObject> {
   // Create a reusable transporter object using the SMTP transport
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
       user: configurationParameters.gmailEmailAddress,
       pass: configurationParameters.gmailAppPassword,
