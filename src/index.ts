@@ -1,7 +1,7 @@
 import { PluginDefinition, startPluginServer } from '@connery-io/sdk';
 import sendEmail from './actions/sendEmail.js';
 
-export const pluginDefinition: PluginDefinition = {
+const pluginDefinition: PluginDefinition = {
   title: 'Gmail',
   description: 'Gmail plugin for Connery',
   actions: [sendEmail],
@@ -42,5 +42,6 @@ export const pluginDefinition: PluginDefinition = {
     },
   ],
 };
+export default pluginDefinition;
 
 startPluginServer(pluginDefinition);

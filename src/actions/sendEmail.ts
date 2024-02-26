@@ -1,7 +1,7 @@
 import { ActionDefinition, ActionContext, OutputParametersObject } from '@connery-io/sdk';
 import nodemailer from 'nodemailer';
 
-const action: ActionDefinition = {
+const actionDefinition: ActionDefinition = {
   key: 'sendEmail',
   title: 'Send email',
   description: 'Send an email to the recipient with the specified subject and body.',
@@ -49,7 +49,7 @@ const action: ActionDefinition = {
     },
   ],
 };
-export default action;
+export default actionDefinition;
 
 export async function handler({
   inputParameters,
