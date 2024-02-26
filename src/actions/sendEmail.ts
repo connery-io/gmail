@@ -1,4 +1,4 @@
-import { ActionDefinition, ActionContext, OutputParametersObject } from '@connery-io/sdk';
+import { ActionDefinition, ActionContext, OutputObject } from '@connery-io/sdk';
 import nodemailer from 'nodemailer';
 
 const actionDefinition: ActionDefinition = {
@@ -51,25 +51,22 @@ const actionDefinition: ActionDefinition = {
 };
 export default actionDefinition;
 
-export async function handler({
-  inputParameters,
-  configurationParameters,
-}: ActionContext): Promise<OutputParametersObject> {
+export async function handler({ input, configuration }: ActionContext): Promise<OutputObject> {
   // Create a reusable transporter object using the SMTP transport
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: configurationParameters.gmailEmailAddress,
-      pass: configurationParameters.gmailAppPassword,
+      user: configuration.gmailEmailAddress,
+      pass: configuration.gmailAppPassword,
     },
   });
 
   // Email content
   let mailOptions = {
-    from: `"${configurationParameters.senderName}" <${configurationParameters.gmailEmailAddress}>`,
-    to: inputParameters.recipient,
-    subject: inputParameters.subject,
-    text: inputParameters.body,
+    from: `"${configuration.senderName}" <${configuration.gmailEmailAddress}>`,
+    to: input.recipient,
+    subject: input.subject,
+    text: input.body,
   };
 
   // Send the email
