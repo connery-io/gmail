@@ -1,4 +1,4 @@
-import { PluginDefinition, startPluginServer } from '@connery-io/sdk';
+import { PluginDefinition, startPluginServer } from 'connery';
 import sendEmail from './actions/sendEmail.js';
 
 const pluginDefinition: PluginDefinition = {

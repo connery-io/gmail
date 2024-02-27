@@ -1,4 +1,4 @@
-import { ActionDefinition, ActionContext, OutputObject } from '@connery-io/sdk';
+import { ActionDefinition, ActionContext, OutputObject } from 'connery';
 import nodemailer from 'nodemailer';
 
 const actionDefinition: ActionDefinition = {
