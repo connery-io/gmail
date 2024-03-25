@@ -3,7 +3,7 @@ import sendEmail from './actions/sendEmail.js';
 
 const pluginDefinition: PluginDefinition = {
   title: 'Gmail',
-  description: 'Gmail plugin for Connery',
+  description: 'A plugin that contains actions to work with Gmail.',
   actions: [sendEmail],
   configurationParameters: [
     {
