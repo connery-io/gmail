@@ -1,4 +1,4 @@
-# Gmail
+# Gmail1
 
 "Gmail" plugin for Connery.
 
