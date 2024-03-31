@@ -42,6 +42,5 @@ const pluginDefinition: PluginDefinition = {
     },
   ],
 };
-export default pluginDefinition;
 
 startPluginServer(pluginDefinition);
