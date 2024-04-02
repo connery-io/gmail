@@ -1,35 +1,21 @@
-# Gmail1
+# Gmail
 
-"Gmail" plugin for Connery.
-
-## Available actions
-
-| Action                                  | Description                                                         |
-| --------------------------------------- | ------------------------------------------------------------------- |
-| [Send email](/src/actions/sendEmail.ts) | Send an email to the recipient with the specified subject and body. |
+A plugin that contains actions to work with Gmail.
 
 ## Repository structure
 
-The entry point for this plugin is the [./src/index.ts](/src/index.ts) file.
-It contains the plugin definition and references to all the actions.
+This repository contains the plugin's source code.
 
-The [./src/actions/](/src/actions/) folder contains all the actions this plugin defines.
-Every action is represented by a separate file with the action definition and implementation.
+| Path                            | Description                                                                                                                                          |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [./src/index.ts](/src/index.ts) | **The entry point for the plugin.** It contains the plugin definition and references to all the actions.                                             |
+| [./src/actions/](/src/actions/) | **This folder contains all the actions of the plugin.** Each action is represented by a separate file with the action definition and implementation. |
 
-The [./dist/plugin.js](/dist/plugin.js) file is the bundled version of the plugin with all the dependencies.
-Connery Platform uses this file to run the plugin.
+## Built using Connery SDK
 
-## Connery
+This plugin is built using [Connery SDK](https://github.com/connery-io/connery), an open-source project for plugin development.
 
-This repository is a plugin for [Connery](https://connery.io).
-
-Connery is an open-source plugin ecosystem for AI and No-Code.
-
-Learn more about Connery:
-
-- [Documentation](https://docs.connery.io)
-- [Source code](https://github.com/connery-io/connery-platform)
-- [How to start using this plugin with Connery?](https://docs.connery.io/docs/platform/quick-start/)
+[Learn how to use the plugin and its actions.](https://sdk.connery.io/docs/quickstart/use-plugin)
 
 ## Support
 

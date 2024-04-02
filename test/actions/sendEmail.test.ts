@@ -2,12 +2,12 @@ import { handler } from '../../src/actions/sendEmail';
 
 // TODO #1: Rename xit() to it() to enable the test.
 // TODO #2: Change the test name below to match your use case.
-xit('should verify if the SendEmail action works as expected', async () => {
+xit('should verify if the sendEmail action works as expected', async () => {
   const configuration = {
-    /* TODO #3: Specify configuration parameters for the plugin. */
+    /* TODO #3: Specify configuration for the plugin. */
   };
   const input = {
-    /* TODO #4: Specify input parameters for the action. */
+    /* TODO #4: Specify input for the action. */
   };
 
   const result = await handler({ input, configuration });
