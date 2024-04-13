@@ -47,7 +47,7 @@ export async function handler({
   });
 
   const emailText =
-    'This is a report of a missing FAQ.\n\n' + 'The following text was provided:\n\n' + inputParameters.reportText;
+    'This is a report of a missing FAQ.\n' + 'The following text was provided:\n\n' + inputParameters.reportText;
 
   // Email content
   let mailOptions = {
