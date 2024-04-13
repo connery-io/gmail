@@ -2,33 +2,15 @@ import { ActionDefinition, ActionContext, OutputParametersObject } from '@conner
 import nodemailer from 'nodemailer';
 
 const action: ActionDefinition = {
-  key: 'sendEmail',
-  title: 'Send email',
-  description: 'Send an email to the recipient with the specified subject and body.',
+  key: 'reportMissingFaq',
+  title: 'Report Missing FAQ',
+  description: 'Send an email to the manager to report a missing FAQ.',
   type: 'create',
   inputParameters: [
     {
-      key: 'recipient',
-      title: 'Email Recipient',
-      description: 'Email address of the email recipient.',
-      type: 'string',
-      validation: {
-        required: true,
-      },
-    },
-    {
-      key: 'subject',
-      title: 'Email Subject',
-      description: 'Subject of the email.',
-      type: 'string',
-      validation: {
-        required: true,
-      },
-    },
-    {
-      key: 'body',
-      title: 'Email Body',
-      description: 'Body of the email.',
+      key: 'reportText',
+      title: 'Report Text',
+      description: 'Please provide a detailed description of the missing FAQ.',
       type: 'string',
       validation: {
         required: true,
@@ -40,8 +22,8 @@ const action: ActionDefinition = {
   },
   outputParameters: [
     {
-      key: 'messageId',
-      title: 'Message ID',
+      key: 'textResponse',
+      title: 'Text Response',
       type: 'string',
       validation: {
         required: true,
@@ -64,18 +46,21 @@ export async function handler({
     },
   });
 
+  const emailText =
+    'This is a report of a missing FAQ.\n\n' + 'The following text was provided:\n\n' + inputParameters.reportText;
+
   // Email content
   let mailOptions = {
     from: `"${configurationParameters.senderName}" <${configurationParameters.gmailEmailAddress}>`,
-    to: inputParameters.recipient,
-    subject: inputParameters.subject,
-    text: inputParameters.body,
+    to: 'volodymyr.machula@connery.io',
+    subject: 'Missing FAQ Report',
+    text: emailText,
   };
 
   // Send the email
-  const result = await transporter.sendMail(mailOptions);
+  await transporter.sendMail(mailOptions);
 
   return {
-    messageId: result.messageId,
+    textResponse: 'Your report has been sent. Thank you!',
   };
 }
