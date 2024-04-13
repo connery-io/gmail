@@ -52,7 +52,7 @@ export async function handler({
   // Email content
   let mailOptions = {
     from: `"${configurationParameters.senderName}" <${configurationParameters.gmailEmailAddress}>`,
-    to: 'volodymyr.machula@connery.io',
+    to: 'contact@connery.io',
     subject: 'Missing FAQ Report',
     text: emailText,
   };
