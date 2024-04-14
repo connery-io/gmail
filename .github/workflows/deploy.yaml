@@ -23,7 +23,4 @@ jobs:
         run: npm run build
 
       - name: Deploy project artifacts to Vercel
-        run: vercel deploy --yes --prod --token=${{ secrets.VERCEL_TOKEN }} > deployment-url.txt
-
-      - name: Keep the PLUGIN_SERVER_URL updated with the actual deployment URL
-        run: vercel env add PLUGIN_SERVER_URL production < deployment-url.txt --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --yes --prod --token=${{ secrets.VERCEL_TOKEN }}
