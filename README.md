@@ -20,5 +20,3 @@ This plugin is built using [Connery SDK](https://github.com/connery-io/connery),
 ## Support
 
 If you have any questions or need help with this plugin, please create an issue in this repository.
-
-test
