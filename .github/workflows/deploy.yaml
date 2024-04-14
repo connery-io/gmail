@@ -3,11 +3,11 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - con-72
+      - main
 
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy to Vercel
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
