@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy:
-    name: Deploy1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,14 +15,11 @@ jobs:
       - name: Install Vercel CLI
         run: npm install vercel -g
 
-      - name: Pull Vercel environment information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      #- name: Install project dependencies
-      #  run: npm install
+      - name: Install project dependencies
+        run: npm install
 
       - name: Build project artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npm run build
 
       - name: Deploy project artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
