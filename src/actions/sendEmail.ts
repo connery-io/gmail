@@ -10,7 +10,7 @@ const action: ActionDefinition = {
     {
       key: 'reportText',
       title: 'Report Text',
-      description: 'Please provide a detailed description of the missing FAQ.',
+      description: 'A detailed description of the missing FAQ.',
       type: 'string',
       validation: {
         required: true,
