@@ -48,7 +48,7 @@ jobs:
           provenance: false
           tags: ${{ steps.meta.outputs.tags }}
 
-      #- name: Deploy to AWS Lambda
+        #- name: Deploy to AWS Lambda
       #  run: |
       #    aws cloudformation deploy \
       #      --template-file infra/aws-lambda.yaml \
