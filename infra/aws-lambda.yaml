@@ -20,3 +20,7 @@ Resources:
             Path: /{proxy+}
             Method: ANY
       ImageUri: !Ref DockerImageUri
+      Environment:
+        Variables:
+          PLUGIN_SERVER_URL: http://localhost:4201
+          API_KEY: 123456

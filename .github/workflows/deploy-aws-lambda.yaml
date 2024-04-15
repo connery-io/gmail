@@ -35,13 +35,12 @@ jobs:
         with:
           push: true
           provenance: false
-          cache-from: type=registry,ref=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest
           tags: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest
 
       - name: Deploy to AWS Lambda
         run: |
           aws cloudformation deploy \
             --template-file infra/aws-lambda.yaml \
-            --stack-name gmail-plugin \
+            --stack-name ${{ env.ECR_REPOSITORY }} \
             --parameter-overrides DockerImageUri=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest \
             --capabilities CAPABILITY_IAM
