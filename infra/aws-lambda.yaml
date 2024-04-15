@@ -20,6 +20,7 @@ Resources:
             Path: /{proxy+}
             Method: ANY
       ImageUri: !Ref DockerImageUri
+      Timeout: 60
       Environment:
         Variables:
           PLUGIN_SERVER_URL: http://localhost:4201
