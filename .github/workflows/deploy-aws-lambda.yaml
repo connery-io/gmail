@@ -10,7 +10,7 @@ env:
 
 jobs:
   deploy:
-    name: Deploy to AWS Lambda
+    name: Deploy to AWS Lambda 1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
