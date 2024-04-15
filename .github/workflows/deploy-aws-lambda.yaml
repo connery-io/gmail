@@ -10,7 +10,7 @@ env:
 
 jobs:
   deploy:
-    name: Deploy to AWS Lambda 1
+    name: Deploy to AWS Lambda
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -45,6 +45,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          provenance: false
           tags: ${{ steps.meta.outputs.tags }}
 
       #- name: Deploy to AWS Lambda
