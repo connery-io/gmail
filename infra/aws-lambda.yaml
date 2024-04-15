@@ -4,7 +4,7 @@ Transform: AWS::Serverless-2016-10-31
 Parameters:
   DockerImageUri:
     Type: String
-    Description: Image URI for Lambda function
+    Description: Image URI for Lambda function 1
 
 Resources:
   Plugin:
