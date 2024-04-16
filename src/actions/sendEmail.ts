@@ -47,7 +47,14 @@ export async function handler({
   });
 
   const emailText =
-    'This is a report of a missing FAQ.\n' + 'The following text was provided:\n\n' + inputParameters.reportText;
+    'Dear FAQ-admin,' +
+    '\n\nThis is a report of a missing FAQ:' +
+    '\n' +
+    inputParameters.reportText +
+    '\n\nTo edit the FAQ-GSheet, go here:' +
+    '\nhttps://docs.google.com/spreadsheets/d/1jZXrIT43qzCBH-y1vKw6bMsYm7kRfEEh4KWSZlIKdMw/edit#gid=1195647291' +
+    '\n\nThank you,' +
+    '\nConnery';
 
   // Email content
   let mailOptions = {
