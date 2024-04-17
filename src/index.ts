@@ -1,4 +1,4 @@
-import { PluginDefinition, startPluginServer } from 'connery';
+import { PluginDefinition, setupPluginServer } from 'connery';
 import sendEmail from './actions/sendEmail.js';
 
 const pluginDefinition: PluginDefinition = {
@@ -43,4 +43,5 @@ const pluginDefinition: PluginDefinition = {
   ],
 };
 
-startPluginServer(pluginDefinition);
+const handler = await setupPluginServer(pluginDefinition);
+export default handler;
