@@ -22,3 +22,4 @@ functions:
     environment:
       PLUGIN_SERVER_URL: http://localhost:4201
       API_KEY: 123456
+      HOSTING_MODE: AWS_LAMBDA
