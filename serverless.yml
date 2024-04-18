@@ -1,6 +1,9 @@
+service: plugin
+
 provider:
   name: aws
   runtime: nodejs20.x
+  stage: prod
   region: eu-central-1
 
 functions:
