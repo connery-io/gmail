@@ -11,10 +11,10 @@ functions:
   main:
     handler: dist/index.default
     events:
-      - http:
+      - httpApi:
           method: ANY
           path: /
-      - http:
+      - httpApi:
           method: ANY
           path: '{proxy+}'
     environment:
