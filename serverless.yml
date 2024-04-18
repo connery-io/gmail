@@ -1,13 +1,14 @@
-service: plugin1
+service: gmail-plugin
 
 provider:
   name: aws
   runtime: nodejs20.x
+  stage: prod
   region: eu-central-1
   memorySize: 256
 
 functions:
-  catchAllAny:
+  main:
     handler: dist/index.default
     events:
       - httpApi: '*'
