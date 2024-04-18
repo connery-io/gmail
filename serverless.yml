@@ -1,4 +1,4 @@
-service: plugin
+service: plugin1
 
 provider:
   name: aws
