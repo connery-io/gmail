@@ -3,7 +3,6 @@ service: plugin1
 provider:
   name: aws
   runtime: nodejs20.x
-  stage: prod
   region: eu-central-1
   memorySize: 256
 
