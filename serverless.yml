@@ -1,8 +1,5 @@
 service: plugin
 
-plugins:
-  - serverless-offline
-
 provider:
   name: aws
   runtime: nodejs20.x
