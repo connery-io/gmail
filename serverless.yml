@@ -8,17 +8,10 @@ provider:
   memorySize: 256
 
 functions:
-  main:
+  catchAllAny:
     handler: dist/index.default
     events:
-      - httpApi:
-          method: '*'
-          path: '/'
-          routeKey: 'ANY /'
-      - httpApi:
-          method: '*'
-          path: '{proxy+}'
-          routeKey: 'ANY /{proxy+}'
+      - httpApi: '*'
     environment:
       PLUGIN_SERVER_URL: http://localhost:4201
       API_KEY: 123456
