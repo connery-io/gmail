@@ -12,10 +12,10 @@ functions:
     handler: dist/index.default
     events:
       - httpApi:
-          method: ANY
+          method: '*'
           path: /
       - httpApi:
-          method: ANY
+          method: '*'
           path: '{proxy+}'
     environment:
       PLUGIN_SERVER_URL: http://localhost:4201
