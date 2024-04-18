@@ -5,6 +5,7 @@ provider:
   runtime: nodejs20.x
   stage: prod
   region: eu-central-1
+  memorySize: 256
 
 functions:
   main:
