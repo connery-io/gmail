@@ -3,7 +3,7 @@ name: Deploy to AWS Lambda
 on:
   push:
     branches:
-      - con-96
+      - main
 
 env:
   SERVICE: gmail-plugin
