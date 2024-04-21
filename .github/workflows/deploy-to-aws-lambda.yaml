@@ -41,4 +41,4 @@ jobs:
 
       - name: Update PLUGIN_SERVER_URL of the Lambda function
         run: |
-          aws lambda update-function-configuration --function-name gmail-plugin-prod-main --environment "Variables={PLUGIN_SERVER_URL=${{steps.get-url.outputs.value}}"
+          aws lambda update-function-configuration --function-name gmail-plugin-prod-main --environment "Variables={PLUGIN_SERVER_URL=${{steps.get-url.outputs.value}}}"
