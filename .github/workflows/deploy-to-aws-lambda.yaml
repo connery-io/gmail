@@ -13,28 +13,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      #- name: Install project dependencies
-      #  run: npm install
-      #
-      #- name: Build project artifacts
-      #  run: npm run build
-      #
-      #- name: Install serverless CLI
-      #  run: npm install serverless -g
-      #
+      - name: Install project dependencies
+        run: npm install
+
+      - name: Build project artifacts
+        run: npm run build
+
+      - name: Install serverless CLI
+        run: npm install serverless -g
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
-      #
-      #- name: Deploy project artifacts to AWS Lambda
-      #  id: deploy
-      #  run: serverless deploy
 
-      #- name: Test 1
-      #  run: serverless info --verbose
+      - name: Deploy project artifacts to AWS Lambda
+        id: deploy
+        run: serverless deploy
 
-      - name: Test 2
-        run: aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs[?OutputKey=='HttpApiUrl'].OutputValue" --output text
+      - name: Get plugin server URL
+        id: get-url
+        run: |
+          VALUE=`aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs[?OutputKey=='HttpApiUrl'].OutputValue" --output text`
+          echo "value=$VALUE" >> $GITHUB_OUTPUT
+
+      - name: Update PLUGIN_SERVER_URL of the Lambda function
+        run: |
+          aws lambda update-function-configuration --function-name gmail-plugin-prod-main --environment "Variables={PLUGIN_SERVER_URL=${{steps.get-url.outputs.value}}"
