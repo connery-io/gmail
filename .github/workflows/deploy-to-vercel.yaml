@@ -3,8 +3,11 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main
+      - fix-vercel
   workflow_dispatch:
+
+env:
+  SCOPE: connery
 
 jobs:
   deploy:
@@ -24,4 +27,4 @@ jobs:
         run: npm install vercel -g
 
       - name: Deploy project artifacts to Vercel
-        run: vercel deploy --yes --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --yes --prod --scope ${{env.SCOPE}} --token=${{ secrets.VERCEL_TOKEN }}
