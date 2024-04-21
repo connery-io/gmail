@@ -1,12 +1,8 @@
 frameworkVersion: ^3.38.0
 
-service: gmail-plugin
-
 provider:
   name: aws
   runtime: nodejs20.x
-  stage: prod
-  region: eu-central-1
   memorySize: 256
 
 functions:

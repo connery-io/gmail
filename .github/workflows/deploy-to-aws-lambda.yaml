@@ -5,6 +5,11 @@ on:
     branches:
       - con-96
 
+env:
+  SERVICE: gmail-plugin
+  STAGE: prod
+  REGION: eu-central-1
+
 jobs:
   deploy:
     name: Deploy to AWS Lambda
@@ -27,13 +32,13 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
+          aws-region: ${{ env.REGION }}
 
       - name: Deploy project artifacts to AWS Lambda
         id: deploy
-        run: serverless deploy
+        run: serverless deploy --service ${{ env.SERVICE }} --stage ${{ env.STAGE }} --region ${{ env.REGION }}
 
       - name: Get plugin server URL
         run: |
-          VALUE=`aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs[?OutputKey=='HttpApiUrl'].OutputValue" --output text`
+          VALUE=`aws cloudformation describe-stacks --stack-name ${{ env.SERVICE }}-${{ env.STAGE }} --query "Stacks[0].Outputs[?OutputKey=='HttpApiUrl'].OutputValue" --output text`
           echo "Please make sure to update the PLUGIN_SERVER_URL environment variable of the Lambda function with the following value: $VALUE"
