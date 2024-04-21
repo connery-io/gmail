@@ -37,4 +37,4 @@ jobs:
       #  run: serverless info --verbose
 
       - name: Test 2
-        run: aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs"
+        run: aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs[?OutputKey=='HttpApiUrl'].OutputValue" --output text
