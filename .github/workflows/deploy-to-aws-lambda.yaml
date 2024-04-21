@@ -33,5 +33,8 @@ jobs:
         id: deploy
         run: serverless deploy
 
-      - name: Display deployed URL
+      - name: Test 1
         run: serverless info --verbose
+
+      - name: Test 2
+        run: aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs"

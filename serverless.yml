@@ -1,3 +1,5 @@
+frameworkVersion: ^3.38.0
+
 service: gmail-plugin
 
 provider:
