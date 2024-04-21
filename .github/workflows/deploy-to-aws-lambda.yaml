@@ -36,7 +36,7 @@ jobs:
 
       - name: Deploy project artifacts to AWS Lambda
         id: deploy
-        run: serverless deploy --service ${{ env.SERVICE }} --stage ${{ env.STAGE }} --region ${{ env.REGION }}
+        run: serverless deploy --stage ${{ env.STAGE }} --region ${{ env.REGION }}
 
       - name: Get plugin server URL
         run: |
