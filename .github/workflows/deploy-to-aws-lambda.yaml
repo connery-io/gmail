@@ -34,4 +34,4 @@ jobs:
         run: serverless deploy
 
       - name: Display deployed URL
-        run: echo "Deployed to ${{ steps.deploy.outputs.endpoint }}"
+        run: serverless info --verbose
