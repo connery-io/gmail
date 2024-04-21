@@ -30,4 +30,8 @@ jobs:
           aws-region: eu-central-1
 
       - name: Deploy project artifacts to AWS Lambda
+        id: deploy
         run: serverless deploy
+
+      - name: Display deployed URL
+        run: echo "Deployed to ${{ steps.deploy.outputs.url }}"
