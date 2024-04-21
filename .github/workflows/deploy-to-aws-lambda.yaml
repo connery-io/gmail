@@ -34,11 +34,6 @@ jobs:
         run: serverless deploy
 
       - name: Get plugin server URL
-        id: get-url
         run: |
           VALUE=`aws cloudformation describe-stacks --stack-name gmail-plugin-prod --query "Stacks[0].Outputs[?OutputKey=='HttpApiUrl'].OutputValue" --output text`
-          echo "value=$VALUE" >> $GITHUB_OUTPUT
-
-      - name: Update PLUGIN_SERVER_URL of the Lambda function
-        run: |
-          aws lambda update-function-configuration --function-name gmail-plugin-prod-main --environment "Variables={PLUGIN_SERVER_URL=${{steps.get-url.outputs.value}}}"
+          echo "Please make sure to update the PLUGIN_SERVER_URL environment variable of the Lambda function with the following value: $VALUE"
