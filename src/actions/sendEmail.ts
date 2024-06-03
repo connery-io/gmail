@@ -3,13 +3,41 @@ import nodemailer from 'nodemailer';
 
 const actionDefinition: ActionDefinition = {
   key: 'sendEmail',
-  title: 'Send email',
+  name: 'Send email',
   description: 'Send an email to the recipient with the specified subject and body.',
   type: 'create',
   inputParameters: [
     {
+      key: 'gmailEmailAddress',
+      name: 'Gmail email address',
+      description: 'Gmail email address to login with and send emails from.',
+      type: 'string',
+      validation: {
+        required: true,
+      },
+    },
+    {
+      key: 'gmailAppPassword',
+      name: 'Gmail app password',
+      description:
+        'Since Gmail does not allow to login with a password, you need to create an app password for your Gmail account. See https://support.google.com/accounts/answer/185833?hl=en for more information.',
+      type: 'string',
+      validation: {
+        required: true,
+      },
+    },
+    {
+      key: 'senderName',
+      name: 'Sender name',
+      description: 'The name of the sender that will appear in the email.',
+      type: 'string',
+      validation: {
+        required: true,
+      },
+    },
+    {
       key: 'recipient',
-      title: 'Email Recipient',
+      name: 'Email Recipient',
       description: 'Email address of the email recipient.',
       type: 'string',
       validation: {
@@ -18,7 +46,7 @@ const actionDefinition: ActionDefinition = {
     },
     {
       key: 'subject',
-      title: 'Email Subject',
+      name: 'Email Subject',
       description: 'Subject of the email.',
       type: 'string',
       validation: {
@@ -27,7 +55,7 @@ const actionDefinition: ActionDefinition = {
     },
     {
       key: 'body',
-      title: 'Email Body',
+      name: 'Email Body',
       description: 'Body of the email.',
       type: 'string',
       validation: {
@@ -41,7 +69,7 @@ const actionDefinition: ActionDefinition = {
   outputParameters: [
     {
       key: 'messageId',
-      title: 'Message ID',
+      name: 'Message ID',
       type: 'string',
       validation: {
         required: true,
@@ -51,19 +79,19 @@ const actionDefinition: ActionDefinition = {
 };
 export default actionDefinition;
 
-export async function handler({ input, configuration }: ActionContext): Promise<OutputObject> {
+export async function handler({ input }: ActionContext): Promise<OutputObject> {
   // Create a reusable transporter object using the SMTP transport
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: configuration.gmailEmailAddress,
-      pass: configuration.gmailAppPassword,
+      user: input.gmailEmailAddress,
+      pass: input.gmailAppPassword,
     },
   });
 
   // Email content
   let mailOptions = {
-    from: `"${configuration.senderName}" <${configuration.gmailEmailAddress}>`,
+    from: `"${input.senderName}" <${input.gmailEmailAddress}>`,
     to: input.recipient,
     subject: input.subject,
     text: input.body,
