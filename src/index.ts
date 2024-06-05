@@ -7,4 +7,5 @@ const pluginDefinition: PluginDefinition = {
   actions: [sendEmail],
 };
 
-await setupPluginServer(pluginDefinition);
+const handler = await setupPluginServer(pluginDefinition);
+export default handler;
