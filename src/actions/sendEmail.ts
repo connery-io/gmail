@@ -66,16 +66,7 @@ const actionDefinition: ActionDefinition = {
   operation: {
     handler: handler,
   },
-  outputParameters: [
-    {
-      key: 'messageId',
-      name: 'Message ID',
-      type: 'string',
-      validation: {
-        required: true,
-      },
-    },
-  ],
+  outputParameters: [],
 };
 export default actionDefinition;
 
@@ -98,9 +89,7 @@ export async function handler({ input }: ActionContext): Promise<OutputObject> {
   };
 
   // Send the email
-  const result = await transporter.sendMail(mailOptions);
+  await transporter.sendMail(mailOptions);
 
-  return {
-    messageId: result.messageId,
-  };
+  return {};
 }
